@@ -1,51 +1,241 @@
-:root{
-  --yellow:#FFC907;
-  --blue:#2E9DF7;
-  --light-blue:#8BD1CB;
-  --green:#4FCB53;
-  --orange:#FF902A;
-  --red:#F5402C;
-  --dark-green:#159A48;
-  --pink:#F16061;
-  --bg:#f7fbff;
-  --text:#0b2540;
+:root {
+  --yellow: #FFC907;
+  --blue: #2E9DF7;
+  --header-bg: #77a8bb;
+  --main-bg: #003367;
+  --text: #ffffff;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
+* {
+  box-sizing: border-box
+}
+
+body {
+  margin: 0;
   font-family: "Proxima Nova", Avenir, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:var(--text);
-  background:linear-gradient(180deg, #f6fbff 0%, var(--bg) 100%);
+  color: var(--text);
+  background: var(--main-bg);
+  min-height: 100vh;
 }
 
-.site-header{padding:18px 32px}
-.nav{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto}
-.logo{font-weight:800;color:var(--blue);letter-spacing:0.6px}
-.nav-links{list-style:none;display:flex;gap:20px;padding:0;margin:0}
-.nav-links a{color:rgba(11,37,64,0.75);text-decoration:none;font-weight:600}
+.site-header {
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--header-bg);
+}
 
-.hero{display:flex;align-items:center;justify-content:center;padding:80px 20px;position:relative;overflow:hidden}
-.hero-inner{max-width:980px;text-align:left;z-index:2}
-.headline{font-size:56px;line-height:1.02;margin:0 0 18px;color:var(--text);font-weight:800}
-.headline-accent{display:block;color:var(--blue);}
-.subhead{font-size:18px;color:rgba(11,37,64,0.8);max-width:720px;margin:0 0 28px}
+.nav {
+  display: contents;
+}
 
-.cta-row{display:flex;gap:14px;align-items:center}
-.btn{display:inline-block;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:700}
-.btn.primary{background:var(--yellow);color:#0b2540;box-shadow:0 6px 18px rgba(46,157,247,0.12);border:2px solid rgba(0,0,0,0.03)}
-.btn.primary:hover{transform:translateY(-2px)}
-.btn.ghost{background:transparent;color:var(--blue);border:2px solid rgba(46,157,247,0.12);padding:12px 20px}
+/* Remove flex properties from nav since we are using header for layout */
 
-.hero-decor{position:absolute;right:-120px;top:-60px;width:560px;height:560px;background:radial-gradient(circle at 30% 30%, var(--light-blue), transparent 40%), radial-gradient(circle at 70% 70%, rgba(46,157,247,0.12), transparent 40%);filter:blur(18px);transform:rotate(12deg);opacity:0.95}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+  /* Lighter weight as per image */
+  color: #000;
+  /* Dark logo text */
+  letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-family: serif;
+  /* Looked serif-ish in image */
+}
 
-.site-footer{padding:28px 20px;background:transparent;text-align:center;color:rgba(11,37,64,0.6);font-size:14px}
+/* .logo::before rule removed */
 
-@media (max-width:720px){
-  .headline{font-size:34px}
-  .hero{padding:52px 16px}
-  .nav{padding:0 16px}
-  .nav-links{display:none}
-  .hero-decor{display:none}
-  .subhead{font-size:16px}
+.nav-links {
+  display: none;
+}
+
+/* Hidden as per image */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border-radius: 999px;
+  padding: 5px 15px;
+  border: 1px solid #333;
+  width: 200px;
+}
+
+.search-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  padding-right: 10px;
+  border-right: 1px solid #333;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  color: #333;
+  outline: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.search-input::placeholder {
+  color: transparent;
+}
+
+/* Hidden placeholder in image style */
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 2 columns */
+  padding: 80px 10%;
+  min-height: 80vh;
+  gap: 40px;
+}
+
+.hero-inner {
+  flex: 1;
+  /* max-width removed to allow spanning the full available space */
+  text-align: center;
+  z-index: 2;
+}
+
+.headline {
+  font-size: 64px;
+  line-height: 1.1;
+  margin: 0 0 24px;
+  color: var(--text);
+  font-weight: 400;
+  /* Looks cleaner */
+}
+
+.headline-accent {
+  display: block;
+  color: var(--text);
+  /* Same color in image */
+}
+
+.subhead {
+  font-size: 26px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 90%;
+  margin: 0 auto 40px;
+  /* Centered with margin auto */
+}
+
+.cta-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Centered buttons */
+  gap: 40px;
+}
+
+.btn.primary {
+  background: var(--yellow);
+  color: #0b2540;
+  padding: 18px 32px;
+  font-size: 18px;
+  border-radius: 12px;
+  /* Less rounded than pill */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border: none;
+  text-transform: capitalize;
+}
+
+.btn.primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn.ghost {
+  display: none;
+}
+
+/* Not in image */
+
+/* See Your Impact Link */
+.see-impact {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.see-impact::after {
+  content: '↓';
+  font-size: 20px;
+}
+
+/* Right Side Image Placeholder */
+.hero-image-container {
+  flex: 1;
+  position: relative;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: #333;
+  /* Dark box for image */
+  border-radius: 4px;
+  position: relative;
+  z-index: 2;
+  background-image: url('gettingwater.jpg');
+  /* Sample image if possible, or just color */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 20px 20px 0px rgba(119, 168, 187, 0.5);
+  /* Offset background effect from header color */
+}
+
+.hero-decor {
+  display: none;
+}
+
+.site-footer {
+  display: none;
+}
+
+/* Simple layout */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-inner {
+    text-align: center;
+    align-items: center;
+  }
+
+  .cta-row {
+    align-items: center;
+  }
+
+  .hero-image-container {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .search-container {
+    display: none;
+  }
 }
