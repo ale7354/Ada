@@ -1,39 +1,52 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Charity: water — Clean Water. Big Impact.</title>
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <header class="site-header">
-      <nav class="nav">
-        <div class="logo">charity:water</div>
-        <ul class="nav-links">
-          <li><a href="#">Our Work</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
+        <nav class="nav">
+            <div class="logo">
+                <img src="jerry_can_yellow.png" alt="Charity Water Logo" style="height: 35px; margin-right: 10px;">
+                charity: water
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Our Work</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="🔍Search..." class="search-input" />
+            <button class="search-btn"></button>
+        </div>
     </header>
 
     <main class="hero">
-      <div class="hero-inner">
-        <h1 class="headline">Clean Water.
-          <span class="headline-accent">Big Impact.</span>
-        </h1>
-        <p class="subhead">Give clean water with confidenct! 100% of your donation funds sustainable water projects, and you’ll see exactly where your impact goes, even with just $10.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="#donate">donate your coffee money!</a>
-          <a class="btn ghost" href="#learn">Learn More</a>
+        <div class="hero-inner">
+            <h1 class="headline">Clean Water.
+                <span class="headline-accent">Big Impact.</span>
+            </h1>
+            <p class="subhead">Give clean water with confidence! 100% of your donation funds sustainable water projects,
+                and you’ll see exactly where your impact goes, even with just $10.</p>
+            <div class="cta-row">
+                <button class="btn primary" onclick="location.href='#donate'">Donate Your Coffee Money!</button>
+                <a href="#impact" class="see-impact">See Your Impact!</a>
+            </div>
         </div>
-      </div>
-      <div class="hero-decor" aria-hidden="true"></div>
+        <div class="hero-image-container">
+            <div class="hero-image-placeholder"></div>
+        </div>
     </main>
 
     <footer class="site-footer">
-      <p>100% of public donations fund water projects — powered by transparency.</p>
+        <p>100% of public donations fund water projects — powered by transparency.</p>
     </footer>
-  </body>
+</body>
+
 </html>
